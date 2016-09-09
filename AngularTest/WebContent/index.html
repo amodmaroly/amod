@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="eventsApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div ng-controller="EventController">
+<div>
+<img  ng-src="{{event.imgUrl}}" alt="">
+</div>
+<div ng-bind="event.name"></div>
+<div>{{event.fullName}}</div>
+<hr/>
+<div ng-bind-template="{{event.location.age}} {{event.location.height}} "></div>
+<hr/>
+
+<div ng-repeat="infoObj in event.infoArray">
+{{infoObj.info1}}
+{{infoObj.creator}}
+{{infoObj.duration}}
+{{infoObj.desc}}
+</div>
+<div>
+{{event.submitCount}}
+<button ng-click="submitCount(event)">Check Submit</button>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-sanitize.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/EventController.js"></script>
+
+</body>
+</html>
